@@ -24,6 +24,11 @@ const styles = StyleSheet.create({
         height:'100%',
         // To let text flow above
         position: 'absolute'
+      },
+      bottonContainer:{
+        position: 'absolute',
+        bottom: 50,
+        width: "100%"
       }
 });
 

@@ -7,7 +7,7 @@ const AppleProduct = ()=>{
 
 
     return(
-        <View style={styles.appleContainer}>
+      <View style={styles.appleContainer}>
         <ImageBackground
           resizeMode="cover"
           source={require('../../assets/images/ipad_pro.png')}
@@ -18,7 +18,10 @@ const AppleProduct = ()=>{
             <Text style={styles.subT}>Supercharged by M2 chip</Text>
             <Text style={styles.subT}>● From $1,099</Text>
         </View>
-        <AppleBtns/>
+
+        <View style={styles.bottonContainer}>
+          <AppleBtns/>
+        </View>
       </View>
     )
 }
