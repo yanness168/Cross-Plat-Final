@@ -1,10 +1,14 @@
-import { StyleSheet, Text, View, Button, Modal, Alert, TouchableHighlight, Image, Animated} from 'react-native';
+import { StyleSheet, Text, View, Button, Modal, Alert, TouchableHighlight, Image, Animated, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import Icon from "react-native-vector-icons/AntDesign";
 
-const AppleBtns = ()=>{
+const AppleBtns = (props)=>{
+    const {modalInfo} = props;
+    const toList = modalInfo.map(m => (<Text style={styles.magicText}>{m}</Text>));
+
     const [heartName, setHeartName] = React.useState(false);
+    const [modalVisible, setModalVisible] = React.useState(false);
 
     const initial = React.useRef(new Animated.Value(10)).current;
 
@@ -24,15 +28,11 @@ const AppleBtns = ()=>{
             useNativeDriver: false,
           }),
             Animated.timing(initial, {
-            toValue: 10,
+            toValue: 5,
             duration: 500,
             useNativeDriver: false,
           }),
           ]).start();
-    }
-
-    const popModal = () =>{
-        return
     }
 
     const getName = heartName === false ? "hearto" : "heart";
@@ -41,7 +41,26 @@ const AppleBtns = ()=>{
     
 
     return(
-        <View style={{flex:1, alignItems: "center", justifyContent: "center"}}>
+        <View style={{flex:1, alignItems: "center", justifyContent: "center", marginBottom: 20}}>
+            <View style={{bottom: 100, position: 'absolute', width: "100%"}}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                    }}
+                >
+                <View>
+                    <View style={styles.modalView}>
+                        {toList}
+                        <Button onPress={() => setModalVisible(!modalVisible)} title="GREAT!"/>
+                    </View>
+                </View>
+                </Modal>
+            </View>
+
             <View style={styles.btn1Container}>
                 <TouchableHighlight
                 style={styles.button1}
@@ -70,7 +89,7 @@ const AppleBtns = ()=>{
                 // set the starting area for no effect
                 pressRetentionOffset={20}
                 //Must add "onPress()" to show color change
-                onPress={popModal}>
+                onPress={() => setModalVisible(true)}>
                     <Text style= {[styles.text,{color:'#FFFFFF'}]}>Learn more about the magic</Text>
                 </TouchableHighlight>
             </View>

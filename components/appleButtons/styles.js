@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     btn1Container:{
         width: '90%',
-        padding: 10,
+        padding: 5,
         justifyContent: 'center',
         alignItems: 'center',
         //backgroundColor: "yellow",
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     },
     btn2Container:{
         width: '96%',
-        padding: 10,
+        padding: 5,
         //backgroundColor: "blue",
     },
     button1:{
@@ -42,6 +42,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: 40,
         paddingBottom: 20
+    },
+    modalView: {
+        top: 300,
+        margin: 15,
+        backgroundColor: "#FFF7FF",
+        borderRadius: 20,
+        padding: 10,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    magicText:{
+        textAlign: "left",
+        lineHeight: 25,
+        fontSize:14
     }
 
 });

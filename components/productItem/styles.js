@@ -1,12 +1,12 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
     appleContainer:{
         width:'100%', 
-        height: '100%'
+        height: Dimensions.get('window').height
       },
       titles:{
-        marginTop: '30%',
+        marginTop: '20%',
         width: "100%",
         alignItems: 'center'
       },
@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
       },
       subT:{
         fontSize: 16,
-        color: "lightgrey"
+        color: "lightgrey",
+        marginHorizontal: 20,
+        textAlign: "center"
       },
       image:{
         width:'100%',

@@ -3,24 +3,24 @@ import React from 'react';
 import styles from './styles';
 import AppleBtns from '../appleButtons/btn'
 
-const AppleProduct = ()=>{
-
+const AppleProduct = (props)=>{
+    const {name, catchyLine, price, modalInfo, url} = props.ipad;
 
     return(
       <View style={styles.appleContainer}>
         <ImageBackground
           resizeMode="cover"
-          source={require('../../assets/images/ipad_pro.png')}
+          source={url}
           style={styles.image}/>
 
         <View style={styles.titles}>
-            <Text style={styles.bigT}>iPad Pro</Text>
-            <Text style={styles.subT}>Supercharged by M2 chip</Text>
-            <Text style={styles.subT}>● From $1,099</Text>
+            <Text style={styles.bigT}>{name}</Text>
+            <Text style={styles.subT}>{catchyLine}</Text>
+            <Text style={styles.subT}>{price}</Text>
         </View>
 
         <View style={styles.bottonContainer}>
-          <AppleBtns/>
+          <AppleBtns modalInfo = {modalInfo}/>
         </View>
       </View>
     )
