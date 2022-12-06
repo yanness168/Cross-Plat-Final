@@ -7,6 +7,7 @@ export default [{
     "● USB-C connector with support for Thunderbolt / USB 4",
     "● 5G Superfast downloads and streaming",
     "● Storage up to 2TB"],
+    likeed: false,
     url: require('../../assets/images/ipad_pro.png')
 },{
     name: 'iPad Air',
@@ -16,6 +17,7 @@ export default [{
     "● 12MP Wide camera",
     "● USB-C connector",
     "● Storage up to 256GB"],
+    liked: false,
     url: require('../../assets/images/ipad_air.png')
 },{
     name: "iPad 10th Generation",
@@ -26,6 +28,7 @@ export default [{
     "● USB-C connector",
     "● 5G Superfast downloads and streaming",
     "● Storage up to 256GB"],
+    liked: false,
     url: require('../../assets/images/ipad10.png')
 },{
     name: "iPad Mini",
@@ -36,5 +39,6 @@ export default [{
     "● USB-C connector",
     "● 5G Superfast downloads and streaming",
     "● Storage up to 256GB"],
+    liked: false,
     url: require('../../assets/images/ipad_mini.png')
 }]

@@ -13,9 +13,10 @@ const AppleBtns = (props)=>{
     const initial = React.useRef(new Animated.Value(10)).current;
 
     const Heart = (props) =>{
-        return <Animated.View style={[styles.heartV,{top: props.Top, transform: [{ rotate: props.Rotate }]}]}>
+        return (
+        <Animated.View style={[styles.heartV,{top: props.Top, transform: [{ rotate: props.Rotate }]}]}>
                 <Icon name={getName} size={40} color={getColor} style={[styles.heart]}/>
-        </Animated.View>
+        </Animated.View>)
     }
 
     const magicMove = ()=>{
