@@ -15,11 +15,13 @@ export default function App() {
       <Drawer.Navigator
       screenOptions={{
         drawerStyle: {
-          backgroundColor: '#c6cbef',
-          width: 180,
+          backgroundColor: 'lightgrey',
+          width: 200,
           drawerType: 'slide',
           swipeEnabled: true,
-          swipeEdgeWidth: 50
+          swipeEdgeWidth: 50,
+          swipeMinDistance: 60,
+          fontSize: 20
         },
         headerStyle: {
           height: 90,

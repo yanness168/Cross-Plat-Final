@@ -12,15 +12,15 @@ function ContactUsScreen ({navigation}){
     
     const buttonConfig = [
         {text:"Yes", onPress:()=>{ToastAndroid.show("Thank You "+JSON.stringify(name), ToastAndroid.SHORT),
-        setFormStatus('Submit')}},
-        {text:"No", onPress:()=>{}}
+        setFormStatus('Submit')
+        setEmail('');
+        setName('');
+        setMessage('')}},
+        {text:"No", onPress:()=>{setFormStatus('Submit')}}
     ]
     const submit = () => {
         Alert.alert("Attention", "Are you sure to submit?",buttonConfig);
         setFormStatus('Submitting...');
-        setEmail('');
-        setName('');
-        setMessage('');
     }
     
     return(
