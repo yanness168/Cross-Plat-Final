@@ -7,8 +7,9 @@ export default [{
     "● USB-C connector with support for Thunderbolt / USB 4",
     "● 5G Superfast downloads and streaming",
     "● Storage up to 2TB"],
-    likeed: false,
-    url: require('../../assets/images/ipad_pro.png')
+    liked: false,
+    url: require('../../assets/images/ipad_pro.png'),
+    wishList: require('../../assets/images/wishListImages/iPadProW.png')
 },{
     name: 'iPad Air',
     catchyLine: "Serious performance in a thin and light design.",
@@ -17,10 +18,12 @@ export default [{
     "● 12MP Wide camera",
     "● USB-C connector",
     "● Storage up to 256GB"],
-    liked: false,
-    url: require('../../assets/images/ipad_air.png')
+    liked: true,
+    url: require('../../assets/images/ipad_air.png'),
+    wishList: require('../../assets/images/wishListImages/iPadAirw.png')
+    
 },{
-    name: "iPad 10th Generation",
+    name: "iPad 10th Gen",
     catchyLine: "The all-new colourful iPad for the things you do every day.",
     price:"● From $599",
     modalInfo: ["● A14 Bionic Chip",
@@ -29,7 +32,8 @@ export default [{
     "● 5G Superfast downloads and streaming",
     "● Storage up to 256GB"],
     liked: false,
-    url: require('../../assets/images/ipad10.png')
+    url: require('../../assets/images/ipad10.png'),
+    wishList: require('../../assets/images/wishListImages/iPad10WList.png')
 },{
     name: "iPad Mini",
     catchyLine: "The full iPad experience designed to fit in one hand.",
@@ -40,5 +44,6 @@ export default [{
     "● 5G Superfast downloads and streaming",
     "● Storage up to 256GB"],
     liked: false,
-    url: require('../../assets/images/ipad_mini.png')
+    url: require('../../assets/images/ipad_mini.png'),
+    wishList: require('../../assets/images/wishListImages/iPadMiniWList.png')
 }]
