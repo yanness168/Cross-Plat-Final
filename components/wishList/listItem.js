@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-
+import { useDispatch } from "react-redux";
+import { removeItem } from "../../redux/actions/index";
 import styles from './styles';
 //Import for Swipeable list
 import { ListItem } from '@rneui/themed';
@@ -14,8 +15,14 @@ import { ListItem } from '@rneui/themed';
 const heartImg = require('../../assets/images/wishListImages/Broken_heart.svg.png');
 
 const WListItem = (props) => {
+
+  const dispatch = useDispatch()
+  //Removes specified ipad from the array
+  const handleRemove = (e) => {
+    dispatch(removeItem(props.ipad));
+  };
   //Props being pulled from ipads on wishlist component
-  var { name, price, wishList, liked } = props.ipad;
+  var { name, price, wishList } = props.ipad;
   return (
     <ListItem.Swipeable
       //Styling for content that gets reviewed when swiping to the left
@@ -25,6 +32,7 @@ const WListItem = (props) => {
         <TouchableOpacity
           onPress={() => {
             //need redux code here to adjust liked true/false state
+            handleRemove()
             reset();
           }}
           

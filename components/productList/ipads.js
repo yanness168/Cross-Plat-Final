@@ -18,7 +18,7 @@ export default [{
     "● 12MP Wide camera",
     "● USB-C connector",
     "● Storage up to 256GB"],
-    liked: true,
+    liked: false,
     url: require('../../assets/images/ipad_air.png'),
     wishList: require('../../assets/images/wishListImages/iPadAirw.png')
     

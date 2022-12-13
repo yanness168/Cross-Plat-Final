@@ -1,11 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, Alert, ToastAndroid } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TextInput, Alert, ToastAndroid, Animated } from 'react-native';
 
 function ContactUsScreen ({navigation}){
     const [formStatus, setFormStatus] = React.useState('Submit');
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
+
+    const initial = React.useRef(new Animated.Value(0)).current;
+
     const Seperator = () =>{
         return <View style={styles.seperator}></View>
     }
@@ -15,7 +18,21 @@ function ContactUsScreen ({navigation}){
         setFormStatus('Submit')
         setEmail('');
         setName('');
-        setMessage('')}},
+        setMessage('');
+        Animated.sequence([
+            Animated.timing(initial, {
+                toValue: 1,
+                duration: 2000,
+                useNativeDriver: false,
+              }),
+            Animated.timing(initial, {
+            toValue: 0,
+            duration: 3000,
+            useNativeDriver: false,
+            }),
+        ]).start();
+
+    }},
         {text:"No", onPress:()=>{setFormStatus('Submit')}}
     ]
     const submit = () => {
@@ -25,6 +42,9 @@ function ContactUsScreen ({navigation}){
     
     return(
         <View style={styles.container}>
+            <Animated.View style={[styles.fadingContainer,{opacity: initial}]}>
+                <Image style={styles.logo} source={require("../../assets/images/thank.png")}/>
+            </Animated.View>
             <Text style={{fontWeight:"bold",margin:10, fontSize: 36}}>LEAVE YOUR PRECIOUS OPINION</Text>
           <View style={styles.form}>
             <TextInput style={styles.input} underlineColorAndroid = "transparent"
@@ -65,6 +85,11 @@ const styles = StyleSheet.create({
     },
     seperator:{
         margin:5
+    },
+    logo:{
+        width: 200,
+        height: 200,
+        resizeMode: 'contain'
     }
 })
 
