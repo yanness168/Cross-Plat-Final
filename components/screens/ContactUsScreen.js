@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, TextInput, Alert, ToastAndroid, Animated } from 'react-native';
+import { Keyboard, StyleSheet, Text, View, Button, Image, TextInput, Alert, ToastAndroid, Animated } from 'react-native';
 
 function ContactUsScreen ({navigation}){
     const [formStatus, setFormStatus] = React.useState('Submit');
@@ -14,7 +14,8 @@ function ContactUsScreen ({navigation}){
     }
     
     const buttonConfig = [
-        {text:"Yes", onPress:()=>{ToastAndroid.show("Thank You "+JSON.stringify(name), ToastAndroid.SHORT),
+        {text:"Yes", onPress:()=>{Keyboard.dismiss(),
+        ToastAndroid.show("Thank You "+JSON.stringify(name), ToastAndroid.SHORT),
         setFormStatus('Submit')
         setEmail('');
         setName('');
