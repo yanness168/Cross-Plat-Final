@@ -13,10 +13,7 @@ import * as Progress from "react-native-progress";
 import { useDispatch, useSelector } from "react-redux";
 import { clearItems } from "../../redux/actions/index";
 import { useIsFocused } from "@react-navigation/native";
-<<<<<<< HEAD
-=======
 import {ProgressBar, MD3Colors} from "react-native-paper";
->>>>>>> 5560b55 (added functionality when progress bar is filled)
 
 
 const WishList = () => {
@@ -52,13 +49,6 @@ const WishList = () => {
 
   //const getting screen width for use in progress bar
   const barWidth = Dimensions.get("screen").width;
-<<<<<<< HEAD
-  return (
-    <View style={styles.appleContainer}>
-      <View style={{ alignItems: "center" }}>
-        <Text> List Progress </Text>
-        <Progress.Bar
-=======
 
   const getColor = (prog)=>{
     if (prog == 1){
@@ -70,21 +60,20 @@ const WishList = () => {
 
   return (
     <View style={styles.appleContainer}>
-      <View style={{ alignItems: "center" }}>
-        <Text> iPad Fan Jourey </Text>
-        <ProgressBar color={getColor(prog)}
->>>>>>> 5560b55 (added functionality when progress bar is filled)
-          progress={prog}
-          width={barWidth * 0.75}
-          //multiplied by 0.75 to take up 75% of the screen only
-        />
-      </View>
       <FlatList
         //pretty much same code as in the main screen for flatlist
         data={listData}
         renderItem={({ item }) => <WListItem ipad={item} />}
         keyExtractor={({ item }, index) => index.toString()}
       />
+      <View style={{ alignItems: "center", marginBottom: 20 }}>
+        <Text style={{fontWeight: "bold", margin: 10, fontSize: 20, fontFamily: 'sans-serif'}}> iPad Fan Journey </Text>
+        <ProgressBar color={getColor(prog)}
+          progress={prog}
+          width={barWidth * 0.75}
+          //multiplied by 0.75 to take up 75% of the screen only
+        />
+      </View>
       <View style={styles.btn1Container}>
         <TouchableOpacity
           style={styles.button1}
