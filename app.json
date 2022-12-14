@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "iPads iSo",
-    "slug": "iPads iSo",
+    "slug": "ipads-iso",
     "version": "2.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.yanness.ipadsiso"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "abd52ca1-2bf9-4a62-8148-a41874e7b80d"
+      }
     }
   }
 }
