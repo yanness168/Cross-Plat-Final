@@ -12,6 +12,7 @@ import WListItem from "./listItem";
 import * as Progress from "react-native-progress";
 import { useDispatch, useSelector } from "react-redux";
 import { clearItems } from "../../redux/actions/index";
+import { useIsFocused } from "@react-navigation/native";
 
 
 const WishList = () => {
@@ -19,7 +20,7 @@ const WishList = () => {
   //Pulls data from state
   const wData = useSelector((store) => store.changeList.value)
   const dispatch = useDispatch();
- 
+  const isFocused = useIsFocused();
   //Method to clear state array, used in clear button
   const handleClearAll = (e) => {
     dispatch(clearItems());
@@ -27,8 +28,15 @@ const WishList = () => {
  
   //updates list upon change to state data
   useEffect(() => {
+    console.log("focuse check:")
+    console.log(isFocused)
+    if(isFocused){
+      setListData(wData);
+    }
+    console.log("data check:")
+    console.log(wData)
     setListData(wData);
-  },[wData])
+  },[isFocused, wData])
 
   //use state to alter data, defaults to ipads array
   const [listData, setListData] = useState(wData);

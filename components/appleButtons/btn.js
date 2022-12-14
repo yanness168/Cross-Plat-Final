@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 import ipads from '../productList/ipads';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, removeItem } from '../../redux/actions/index'
+import { useIsFocused } from "@react-navigation/native";
 //{ addItem, removeItem, workingList}, 
 const AppleBtns = (props)=>{
     //name, catchyLine, price, liked, url, wishList,
@@ -15,39 +16,48 @@ const AppleBtns = (props)=>{
     const [stateData, setStateData] = React.useState({});
     const [heartName, setHeartName] = React.useState(false);
     const [modalVisible, setModalVisible] = React.useState(false);
-    const [counter, setCounter] = React.useState(0)
-
+    const [counter, setCounter] = React.useState(0);
+    const isFocused = useIsFocused();
     React.useEffect(()=>{
+        console.log(heartName)
         heartName ? handleAdd() : handleRemove()
     },[counter])
     
     React.useEffect(()=>{
         filterState();
-    },[wData])
+        //console.log(wData)
+    },[isFocused])
     //Functions to add and remove items from state array
     const handleAdd = (e) => {
-        dispatch(addItem(stateData))
+        dispatch(addItem(stateData[0]))
     };
     const handleRemove = (e) => {
-        dispatch(removeItem(stateData))
+        dispatch(removeItem(stateData[0]))
     };
     const initial = React.useRef(new Animated.Value(10)).current;
     //Method to filter ipad item based on modal info
     //Sets the state data to the filtered ipad so that it can be passed to the state array
     const filter = () => {
         var filteredData = ipads.filter((item) => item.modalInfo == modalInfo)
-        console.log(filteredData);
+        //console.log(filteredData);
         setStateData(filteredData);
     }
     //Sets the state of the heart button based on
     //Whether the item is in the state array or not
     const filterState = () => {
-        var filteredStateData = wData.filter((item) => item.modalInfo == modalInfo)
-        console.log(filteredStateData)
+         let filteredStateData = []
+         filteredStateData = wData.filter((item) => item.modalInfo == modalInfo)
+        //console.log(filteredStateData)
         if(filteredStateData.length == 0) {
+            console.log("false happening")
+            console.log(filteredStateData)
             setHeartName(false);
+            
         } else {
+            console.log("true happening")
+            console.log(filteredStateData)
             setHeartName(true);
+            
         }
         
     }
@@ -74,9 +84,8 @@ const AppleBtns = (props)=>{
             useNativeDriver: false,
           }),
           ]).start();
-          filter()
-          console.log(stateData)
-          setCounter(counter + 1)
+          filter();
+          setCounter(counter + 1);
     }
 
     const getName = heartName === false ? "hearto" : "heart";

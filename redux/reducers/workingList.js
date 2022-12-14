@@ -3,12 +3,12 @@ import { LIKE, DISLIKE, CLEAR } from '../actionTypes/index';
 const initialState = {value: []}
 
 export default function(state = initialState, action) {
-    console.log(state);
+    //console.log(state);
     console.log(action.payload);
     //Method to filter out a specific element from the array
     function arrayRemove(arr, v) {
-        console.log(arr);
-        console.log(v);
+        //console.log(arr);
+        //console.log(v);
         return arr.filter(function(ele){
             return ele != v
         })
@@ -21,6 +21,7 @@ export default function(state = initialState, action) {
                 ...state,
                 //Removes the passed value form the state array
                 value: arrayRemove(state.value, rem)
+                
             }
         }
 
