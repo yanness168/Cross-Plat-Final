@@ -10,40 +10,6 @@ This cross-platform mobile application allows users to create and manage a wishl
 *   **Price Tracking (Optional):** The app can potentially track price changes for wishlisted iPads and notify users of deals or discounts (this feature aligns with data analysis and automation skills relevant to the IBM job description).
 *   **Sharing (Optional):** Users can share their wishlist with friends and family via social media or messaging apps.
 
-## Technologies Used
-
-*   **Flutter:** A cross-platform UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This aligns with the IBM job description's emphasis on adaptability and learning new technologies.
-*   **Dart:** The programming language used by Flutter, known for its productivity and ease of use.
-*   **Firebase (Optional):** A backend-as-a-service platform for data storage, authentication, and cloud functions.
-*   **Provider (Optional):** A state management solution for Flutter applications.
-
-## Getting Started
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yanness168/Cross_Plat_Final_iPads_wishList.git](https://github.com/yanness168/Cross_Plat_Final_iPads_wishList.git)
-    ```
-
-2.  **Install Flutter:**
-    Follow the instructions at [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install) to install Flutter on your system.
-
-3.  **Set up Firebase (Optional):**
-    If you want to use Firebase for backend services, create a Firebase project and follow the instructions to integrate it with your Flutter app.
-
-4.  **Run the application:**
-    ```bash
-    flutter run
-    ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues.
-
-## License
-
-This project is licensed under the MIT License.
-
-
 Splash:
 ![splash](https://user-images.githubusercontent.com/94063697/207746434-292b7f97-8347-4d2b-994f-1efd5576e30f.jpg)
 
