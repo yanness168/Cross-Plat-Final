@@ -7,8 +7,6 @@ This cross-platform mobile application allows users to create and manage a wishl
 *   **iPad Browsing:** Users can browse a curated list of iPads with detailed specifications and images.
 *   **Wishlist Creation:** Users can add iPads to their wishlist, indicating their interest in specific models.
 *   **Wishlist Management:** Users can view, edit, and delete items from their wishlist.
-*   **Price Tracking (Optional):** The app can potentially track price changes for wishlisted iPads and notify users of deals or discounts (this feature aligns with data analysis and automation skills relevant to the IBM job description).
-*   **Sharing (Optional):** Users can share their wishlist with friends and family via social media or messaging apps.
 
 Splash:
 ![splash](https://user-images.githubusercontent.com/94063697/207746434-292b7f97-8347-4d2b-994f-1efd5576e30f.jpg)
